@@ -6,6 +6,7 @@ exports.up = function(knex) {
     return knex.schema.createTable('roles', tbl=>{
         tbl.increments();
         tbl.string('name', 128)
+            .unique()
             .notNullable();
     })
     .createTable('users', tbl=>{
@@ -28,6 +29,7 @@ exports.up = function(knex) {
     .createTable('malzemeler', tbl=>{
         tbl.increments();
         tbl.string('name', 128)
+            .unique()
             .notNullable();
     })
     .createTable('orders', tbl=>{
@@ -40,6 +42,7 @@ exports.up = function(knex) {
         tbl.string('status', 128)
             .notNullable();
         tbl.decimal('ucret', 128)
+            .unsigned()
             .notNullable();
         tbl.string('created_at', 128)
             .defaultTo(knex.fn.now())
