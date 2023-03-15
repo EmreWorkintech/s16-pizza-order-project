@@ -9,7 +9,7 @@ exports.seed = async function(knex) {
   await knex('orders').insert([
     {boyut: 'Büyük', hamur: 'Kalın', note:'Zeytin olmasın', ucret:100, status: 'Hazırlanıyor', user_id: 2},
     {boyut: 'Küçük', hamur: 'İnce', ucret:90, status: 'Sırada bekliyor', user_id: 2},
-    {boyut: 'Orta', hamur: 'Parmesan Kenar', ucret:55, status: 'Sırada bekliyor', user_id: 2}
+    {boyut: 'Orta', hamur: 'Parmesan Kenar', ucret:55, status: 'Hazırlandı', user_id: 2}
   ]);
   await knex('order_malzemeler').insert([
     {malzeme_id: 1, order_id: 1},
